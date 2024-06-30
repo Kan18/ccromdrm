@@ -8,3 +8,7 @@ Short explanation:
 - the startup downloads the protected program from the server, which validates the startup hash, ID, and IP
 
 The code is a bit messy in its current state. To get it running, use a datapack to move `rom.lua` into `rom/autorun`, run `server.js` with node.js in the same folder as `script.lua` and modify the constants in the js if necessary, and install `startup.lua` as `startup` in a computer.
+
+This code is intended to be secure, and I am currently unaware of any vulnerabilities, but I haven't exhaustively tested the protection yet, so there are probably a few bugs I haven't discovered.
+
+Thanks to Anavrins for the SHA256 library!
