@@ -1,8 +1,10 @@
+// A simple example to demonstrate an external server that serves a script to DRM-enabled computers.
+// You could modify this for your own needs, or create your own server software.
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const REQUIRED_STARTUP_HASH = "c2fecbeea51125a4e4ae487355ff5c15d17d28d93897c3e6dd49d36a828227a9";
+const REQUIRED_STARTUP_HASH = "086954732407f2e4a011d75cade1382fd2ba67b10472be931837009b612c15b5";
 
 const ALLOWED_IPS = [
     '::ffff:127.0.0.1',
@@ -41,7 +43,8 @@ const server = http.createServer((req, res) => {
             return;
         }
 
-        const headerValue = req.headers['ccromdrm'];
+        const headerValue = req.headers['cc-rom-drm'];
+
         if (!headerValue) {
             console.log('Missing header');
             res.writeHead(400, { 'Content-Type': 'text/plain' });
