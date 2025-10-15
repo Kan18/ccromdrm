@@ -1,6 +1,8 @@
 # ComputerCraft ROM-Assisted DRM
 This repository contains a proof-of-concept for a DRM scheme in ComputerCraft using a file in rom/autorun. 
 
+Quick note: the code as it is right now is only secure on CC:T 1.116.0+ due to https://github.com/cc-tweaked/CC-Tweaked/pull/2214/. Add a check for `motd.enable` in `romdrm.lua` if you want it to be secure on somewhat earlier versions. Very earlier versions might still be insecure due to other things I've overlooked. 
+
 Short explanation:
 - when the computer boots, after settings load but before user startup programs run, the code in `romdrm.lua` runs
 - if the drm setting is enabled, it takes the ID and a hash of the `startup` file
