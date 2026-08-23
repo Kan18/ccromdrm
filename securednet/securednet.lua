@@ -158,7 +158,10 @@ os.shutdown = function() -- run on final line of bios.lua
     local function cresume(...)
         local ev, _, _, _, data = ...
         if ev == "modem_message" and type(data) == "table" then
-            if data.nMessageID and (data.nRecipient ~= computerID and not data.nRecipient == CHANNEL_BROADCAST) then
+            local recipient = data.nRecipient
+            if data.nMessageID
+                and recipient ~= computerID
+                and recipient ~= CHANNEL_BROADCAST then
                 return -- ignore the event
             end
         end

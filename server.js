@@ -4,7 +4,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const REQUIRED_STARTUP_HASH = "086954732407f2e4a011d75cade1382fd2ba67b10472be931837009b612c15b5";
+const REQUIRED_STARTUP_HASH = "10d38e6e88b3eb2195fdcfcdd053a9e01cfe775f54678eaaae664061164713f5";
 
 const ALLOWED_IPS = [
     '::ffff:127.0.0.1',
